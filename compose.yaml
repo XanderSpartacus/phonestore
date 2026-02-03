@@ -9,7 +9,7 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data:rw
     ports:
-      - "5433:5432" # Changed from 5432 to 5433 to avoid potential conflicts
+      - "5432:5432" # Changed from 5432 to 5433 to avoid potential conflicts
     healthcheck:
       test: ["CMD", "pg_isready", "-d", "phonestore_db", "-U", "phonestore_user"]
       timeout: 5s
