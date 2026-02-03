@@ -1,3 +1,6 @@
+/* Ici on importe le CSS Bootstrap */
+@import '../vendor/bootstrap/dist/css/bootstrap.min.css';
+
 body {
-    background-color: skyblue;
+    background-color: white;
 }
