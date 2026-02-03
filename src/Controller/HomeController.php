@@ -15,4 +15,16 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/mentions-legales', name: 'app_mentions')]
+    public function mentions(): Response
+    {
+        return $this->render('home/mentions-legales.html.twig');
+    }
+
+    #[Route('/cgv', name: 'app_cgv')]
+    public function cgv(): Response
+    {
+        return $this->render('home/cgv.html.twig');
+    }
 }
