@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de commande - PhoneStore</title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333;">
+<h2>Merci pour votre commande 🛒</h2>
+
+<p>Bonjour {{ username }},</p>
+
+<p>
+    Nous vous confirmons la bonne prise en compte de votre commande
+    <strong>{{ order.number }}</strong>
+    passée le {{ order.date|date('d/m/Y') }}.
+</p>
+
+<h3>Détail de la commande</h3>
+
+<ul>
+    {% for item in order.items %}
+        <li>
+            {{ item.name }} —
+            {{ item.quantity }} × {{ item.price }} €
+        </li>
+    {% endfor %}
+</ul>
+
+<p><strong>Total :</strong> {{ order.total }} €</p>
+
+<p>Vous recevrez un email lorsque votre commande sera expédiée.</p>
+
+<p>
+    Merci pour votre confiance,<br>
+    <strong>L’équipe PhoneStore</strong>
+</p>
+
+</body>
+</html>
