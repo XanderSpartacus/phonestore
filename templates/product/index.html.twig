@@ -6,8 +6,23 @@
     <style>
         h1 {
             font-size: 54px;
-            color: green;
+            color: green !important;
         }
+        .products {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            padding: 0;
+        }
+        .products li {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .products li img {
+            width: 150px;
+        }
+
     </style>
 {% endblock %}
 
@@ -15,5 +30,17 @@
     <section>
         <h1>Nos Produits</h1>
         <p>Découvrez notre sélection de smartphones.</p>
+        {# Afficher les 3 produits depuis le ProductController #}
+        <ul class="products">
+        {% for product in products %}
+            <li>
+                <img class="img-fluid" src="{{ asset('images/products/' ~ product.image) }}" alt="{{ product.name }}"><br>
+                Nom : {{ product.name }}<br>
+                Prix : {{ product.price }}<br>
+                Marque : {{ product.brand }}<br>
+                Modèle : {{ product.model }}<br>
+            </li>
+        {% endfor %}
+        </ul>
     </section>
 {% endblock %}
