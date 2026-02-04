@@ -20,6 +20,7 @@ class UserFixtures extends Fixture
         $admin->setEmail('admin@phonestore.com');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setPassword($this->passwordHasher->hashPassword($admin,'password'));
+        $admin->setIsVerified(true);
 
         $manager->persist($admin);
 
@@ -28,6 +29,7 @@ class UserFixtures extends Fixture
         $user->setEmail('user@phonestore.com');
         $user->setRoles(['ROLE_USER']);
         $user->setPassword($this->passwordHasher->hashPassword($user,'password'));
+        $user->setIsVerified(true);
 
         $manager->persist($user);
 
